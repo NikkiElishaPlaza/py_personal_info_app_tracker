@@ -1,30 +1,29 @@
-"""
-- Program 1:
-Create a program that ask user for personal information. 
-Minimum of 5 information per person, more info the better. 
-eg. Fullname, Address, etc. 
-Write the collected information in a txt file. 
-It's up to you on how you'd like to format the information in the file. 
-The program should ask user if want to input another person or exit.
+# main func
+def main():
+    print("Welcome to personal info app tracker!")
 
-- Program 2:
-Create another program that ask user for fullname. 
-Find the full name in the txt file (output of program1). 
-Display the informations found in the txt file.
-"""
+    # txt file path to store data
+    personal_info_file_path = "personal_info.txt"
+
+    # get user personal data
+
 
 # get user infos
-"""
-    infos to get 
+    """
+    infos to get
     Full name (First name, M.I., Last name)
     Birthdate (M/D/Y)
     Personal number (+63 ___)
     Telephone number (if applicable, put 0 if N/A)
     Address
-"""
+    """
+def get_user_info():
+
+
+
 
 # Storing in a txt file
-"""
+    """
     txt file format
     Full name, Birthdate, Personal number, Telephone number, Address
-"""
+    """
