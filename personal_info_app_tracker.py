@@ -22,3 +22,9 @@ Display the informations found in the txt file.
     Telephone number (if applicable, put 0 if N/A)
     Address
 """
+
+# Storing in a txt file
+"""
+    txt file format
+    Full name, Birthdate, Personal number, Telephone number, Address
+"""
