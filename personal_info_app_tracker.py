@@ -13,3 +13,12 @@ Find the full name in the txt file (output of program1).
 Display the informations found in the txt file.
 """
 
+# get user infos
+"""
+    infos to get 
+    Full name (First name, M.I., Last name)
+    Birthdate (M/D/Y)
+    Personal number (+63 ___)
+    Telephone number (if applicable, put 0 if N/A)
+    Address
+"""
