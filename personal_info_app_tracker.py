@@ -6,7 +6,13 @@ def main():
     personal_info_file_path = "personal_info.txt"
 
     # get user personal data
+    user_personal_info = get_user_info()
 
+    # write info to txt file
+    save_personal_info_to_file = ()
+
+    # repeating the process and continue adding data
+    continue_input = ()
 
 # get user infos
     """
@@ -18,6 +24,15 @@ def main():
     Address
     """
 def get_user_info():
+    
+    while True:
+        user_name = input("Enter your name: ")
+
+        if user_name and not any(char.isdigit() for char in user_name):
+            break
+        else:
+            print("Kindly enter a valid name that contains letters and not numbers.")
+    
 
 
 
