@@ -66,14 +66,15 @@ def get_user_info():
 
     # user telephone number
     while True:
-        user_telephone_number = input("Enter your telephone number here: ")
+        user_telephone_number = input("Enter your telephone number here (Enter 0 if N/A): ")
+
+        not_applicable = 0
 
         if user_telephone_number.isdigit() and len(user_telephone_number) == 10:
             break
-        if user_telephone_number == 0:
-            break
         else:
-            print("Invalid input.")
+            user_telephone_number == not_applicable
+            break
 
     # user address
     while True:
