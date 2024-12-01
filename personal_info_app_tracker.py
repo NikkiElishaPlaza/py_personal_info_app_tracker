@@ -75,13 +75,20 @@ def get_user_info():
         else:
             print("Invalid input.")
 
+    # user address
+    while True:
+        user_address = input("Enter your Address here: ")
     
+        if user_address:
+            break
+        else:
+            print("Address cannot be empty.")
 
-
-
-
+    
 # Storing in a txt file
         """
     txt file format
     Full name, Birthdate, Personal number, Telephone number, Address
         """
+
+main()
