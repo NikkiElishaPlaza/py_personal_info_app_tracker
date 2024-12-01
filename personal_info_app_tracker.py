@@ -19,14 +19,6 @@ def main():
             break
 
 # get user infos
-    """
-    infos to get
-    Full name (First name, M.I., Last name)
-    Birthdate (M/D/Y)
-    Personal number
-    Telephone number (if applicable, put 0 if N/A)
-    Address
-    """
 def get_user_info():
     # user name
     while True:
@@ -36,7 +28,6 @@ def get_user_info():
             break
         else:
             print("Kindly enter a valid name that contains letters and not numbers.")
-
     # user bday
     while True:
         user_bday = input("Enter your Birthdate (Month Day, Year): ")
@@ -46,7 +37,6 @@ def get_user_info():
 
                 comma_position = user_bday.find(",")
                 last_space_position = user_bday.rfind(" ")
-            
             month_day = user_bday[:comma_position]
             year = user_bday[last_space_position + 1:]
 
@@ -57,7 +47,6 @@ def get_user_info():
                 print("Year must be valid 4-digit number only.")
         except:
             print("Kindly print your birthdate in a proper format: Month Day, Year (e.g., December 25, 0000)")
-
     # user phone number
     while True:
         user_phone_number = input("Enter your phone number here: ")
@@ -66,7 +55,6 @@ def get_user_info():
             break
         else:
             print("Enter a valid personal number with 11 digits.")
-
     # user telephone number
     while True:
         user_telephone_number = int(input("Enter your telephone number here (Enter 0 if N/A): "))
@@ -76,11 +64,10 @@ def get_user_info():
         else:
             print("Invalid input.")
             break
-
     # user address
     while True:
         user_address = input("Enter your Address here: ")
-    
+
         if user_address:
             break
         else:
@@ -93,7 +80,6 @@ def get_user_info():
         "Telephone Number": user_telephone_number,
         "Address": user_address
     }
-
 # Storing in a txt file
 separator = "-" * 25
 def save_personal_info_to_file(file_path, personal_info):
@@ -110,5 +96,5 @@ def save_personal_info_to_file(file_path, personal_info):
         print(f"Personal information saved successfully in {file_path}.")
     except Exception as e:
         print(f"An error occurred while saving the information: {e}")
-
+    
 main()
