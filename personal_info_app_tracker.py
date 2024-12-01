@@ -23,15 +23,14 @@ def main():
     infos to get
     Full name (First name, M.I., Last name)
     Birthdate (M/D/Y)
-    Personal number (+63 ___)
+    Personal number
     Telephone number (if applicable, put 0 if N/A)
     Address
     """
 def get_user_info():
-    
     # user name
     while True:
-        user_name = input("Enter your name: ")
+        user_name = input("Enter your full name (First name, M.I., Last name): ")
 
         if user_name and not any(char.isdigit() for char in user_name):
             break
@@ -63,7 +62,7 @@ def get_user_info():
     while True:
         user_phone_number = int(input("Enter your phone number here: "))
 
-        if len(user_phone_number) == 11:
+        if user_phone_number.isdigit() and len(user_phone_number) == 11:
             break
         else:
             print("Enter a valid personal number with 11 digits.")
