@@ -61,9 +61,9 @@ def get_user_info():
 
     # user phone number
     while True:
-        user_phone_number = input("Enter your phone number here: ")
+        user_phone_number = int(input("Enter your phone number here: "))
 
-        if user_phone_number.isdigit() and len(user_phone_number) == 11:
+        if len(user_phone_number) == 11:
             break
         else:
             print("Enter a valid personal number with 11 digits.")
@@ -72,9 +72,7 @@ def get_user_info():
     while True:
         user_telephone_number = int(input("Enter your telephone number here (Enter 0 if N/A): "))
 
-        not_applicable = 0
-
-        if user_telephone_number == not_applicable or len(user_telephone_number) == 10:
+        if user_telephone_number == 0 or len(user_telephone_number) == 10:
             break
         else:
             print("Invalid input.")
