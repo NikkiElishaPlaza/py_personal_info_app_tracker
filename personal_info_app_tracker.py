@@ -95,20 +95,17 @@ def get_user_info():
     }
 
 # Storing in a txt file
-    """
-    txt file format
-    Full name, Birthdate, Personal number, Telephone number, Address
-    """
+separator = "-" * 25
 def save_personal_info_to_file(file_path, personal_info):
     try:
         with open(file_path, "a") as file:
             file.write(
-                f"Full name: {personal_info['Full Name']}\n"
+                f"\nFull name: {personal_info['Full Name']}\n"
                 f"Birthdate: {personal_info['Birthdate']}\n"
                 f"Personal number: {personal_info['Personal Number']}\n"
                 f"Telephone number: {personal_info['Telephone Number']}\n"
                 f"Address: {personal_info['Address']}\n"
-                "--------------------------------------------------------"
+                f"{separator}"
             )
         print(f"Personal information saved successfully in {file_path}.")
     except Exception as e:
