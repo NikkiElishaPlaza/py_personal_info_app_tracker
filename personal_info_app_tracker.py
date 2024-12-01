@@ -25,6 +25,7 @@ def main():
     """
 def get_user_info():
     
+    # user name
     while True:
         user_name = input("Enter your name: ")
 
@@ -32,13 +33,35 @@ def get_user_info():
             break
         else:
             print("Kindly enter a valid name that contains letters and not numbers.")
-    
+
+    # user bday
+    while True:
+        user_bday = input("Enter your Birthdate (Month Day, Year): ")
+
+        if "," in user_bday and " " in user_bday:
+
+            comma_position = user_bday.find(",")
+            last_space_position = user_bday.rfind(" ")
+        
+        month_day = user_bday[:comma_position]
+        year = user_bday[last_space_position + 1:]
+
+        if year.isdigit() and len(year) == 4:
+            day_part = month_day.split()[-1]
+            if day_part.isdigit() and 1 <= int(day_part) <= 31:
+                print(f"Your birthdate is: {user_bday}")
+            else:
+                print("Day must be a number between 1 and 31.")
+        else:
+            print("Year must be valid 4-digit number only.")
+    else:
+        print("Kindly print your birthdate in a proper format: Month Day, Year (e.g., December 25, 0000)")
 
 
 
 
 # Storing in a txt file
-    """
+        """
     txt file format
     Full name, Birthdate, Personal number, Telephone number, Address
-    """
+        """
