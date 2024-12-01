@@ -60,7 +60,7 @@ def get_user_info():
 
     # user phone number
     while True:
-        user_phone_number = int(input("Enter your phone number here: "))
+        user_phone_number = input("Enter your phone number here: ")
 
         if user_phone_number.isdigit() and len(user_phone_number) == 11:
             break
@@ -87,12 +87,12 @@ def get_user_info():
             print("Address cannot be empty.")
 
     return {
-            "Full Name": user_name,
-            "Birthdate": user_bday,
-            "Personal Number": user_phone_number,
-            "Telephone Number": user_telephone_number,
-            "Address": user_address,
-        }
+        "Full Name": user_name,
+        "Birthdate": user_bday,
+        "Personal Number": user_phone_number,
+        "Telephone Number": user_telephone_number,
+        "Address": user_address
+    }
 
 # Storing in a txt file
     """
@@ -101,17 +101,17 @@ def get_user_info():
     """
 def save_personal_info_to_file(file_path, personal_info):
     try:
-        print(personal_info)
-        
-        # writing personal information to the file
         with open(file_path, "a") as file:
             file.write(
-                f"{personal_info['Full Name']}, {personal_info['Birthdate']}, "
-                f"{personal_info['Personal Number']}, {personal_info['Telephone Number']}, "
-                f"{personal_info['Address']}\n"
+                f"Full name: {personal_info['Full Name']}\n"
+                f"Birthdate: {personal_info['Birthdate']}\n"
+                f"Personal number: {personal_info['Personal Number']}\n"
+                f"Telephone number: {personal_info['Telephone Number']}\n"
+                f"Address: {personal_info['Address']}\n"
+                "--------------------------------------------------------"
             )
         print(f"Personal information saved successfully in {file_path}.")
-    except:
-        print("An error occurred while saving the information.")
+    except Exception as e:
+        print(f"An error occurred while saving the information: {e}")
 
 main()
