@@ -5,14 +5,18 @@ def main():
     # txt file path to store data
     personal_info_file_path = "personal_info.txt"
 
-    # get user personal data
-    user_personal_info = get_user_info()
+    while True:
+        # get user personal data
+        user_personal_info = get_user_info()
 
-    # write info to txt file
-    save_personal_info_to_file = ()
+        # write info to txt file
+        save_personal_info_to_file(personal_info_file_path, user_personal_info)
 
-    # repeating the process and continue adding data
-    continue_input = ()
+        # repeating the process and continue adding data
+        continue_input = input("Would you like to add another entry? (yes/no): ").strip().lower()
+        if continue_input != "yes":
+            print("Thank you for using the personal info tracker. Goodbye!")
+            break
 
 # get user infos
     """
@@ -66,14 +70,14 @@ def get_user_info():
 
     # user telephone number
     while True:
-        user_telephone_number = input("Enter your telephone number here (Enter 0 if N/A): ")
+        user_telephone_number = int(input("Enter your telephone number here (Enter 0 if N/A): "))
 
         not_applicable = 0
 
-        if user_telephone_number.isdigit() and len(user_telephone_number) == 10:
+        if user_telephone_number == not_applicable or len(user_telephone_number) == 10:
             break
         else:
-            user_telephone_number == not_applicable
+            print("Invalid input.")
             break
 
     # user address
@@ -85,11 +89,32 @@ def get_user_info():
         else:
             print("Address cannot be empty.")
 
-    
+    return {
+            "Full Name": user_name,
+            "Birthdate": user_bday,
+            "Personal Number": user_phone_number,
+            "Telephone Number": user_telephone_number,
+            "Address": user_address,
+        }
+
 # Storing in a txt file
-        """
+    """
     txt file format
     Full name, Birthdate, Personal number, Telephone number, Address
-        """
+    """
+def save_personal_info_to_file(file_path, personal_info):
+    try:
+        print(personal_info)
+        
+        # writing personal information to the file
+        with open(file_path, "a") as file:
+            file.write(
+                f"{personal_info['Full Name']}, {personal_info['Birthdate']}, "
+                f"{personal_info['Personal Number']}, {personal_info['Telephone Number']}, "
+                f"{personal_info['Address']}\n"
+            )
+        print(f"Personal information saved successfully in {file_path}.")
+    except:
+        print("An error occurred while saving the information.")
 
 main()
